@@ -39,7 +39,7 @@ out vec4 FragColor;
 void main(){
 	vec3 scatteredLight = vec3(0.0);
 	vec3 reflectedLight = vec3(0.0);
-
+	
 	for (int light = 0; light < MaxLights; light++){
 		if (!Lights[light].isEnabled){
 			continue;

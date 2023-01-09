@@ -16,7 +16,7 @@ public:
 
 	Window(const char* name, int w, int h) {
 		glfwInit();
-		m_aspect = (float)w / h;
+		aspct = (float)w / h;
 		window = glfwCreateWindow(w, h, name, nullptr, nullptr);
 		if (!window) {
 			std::cerr << "Failed to create GLFW window\n";
@@ -29,7 +29,7 @@ public:
 		}
 
 		glViewport(0, 0, w, h);
-		glfwSetFramebufferSizeCallback(window, [](GLFWwindow* win, int w, int h) { glViewport(0, 0, w, h); m_aspect = (float)w / h; });
+		glfwSetFramebufferSizeCallback(window, [](GLFWwindow* win, int w, int h) { glViewport(0, 0, w, h); aspct = (float)w / h; dirty = true; });
 	}
 
 	void setColor(const glm::vec4& color) {
@@ -57,7 +57,7 @@ public:
 	}
 
 	float aspect() {
-		return m_aspect;
+		return aspct;
 	}
 
 	WinSize getSize() {
@@ -69,10 +69,19 @@ public:
 		return window;
 	}
 
+	bool isDirty() {
+		return dirty;
+	}
+
+	void setDirty(bool state) {
+		dirty = state;
+	}
+
 private:
 	WinSize winSize{};
 	GLFWwindow* window;
-	static float m_aspect;
+	static float aspct;
+	static bool dirty;
 
 	void initGL() {
 		glfwInit();
@@ -83,4 +92,5 @@ private:
 
 };
 
-inline float Window::m_aspect = -1.f;
+inline float Window::aspct = -1.f;
+inline bool Window::dirty = true;

@@ -46,8 +46,11 @@ void VoxelEngine::render() {
 			mainShader.setVec3("EyeDirection", -camera.getFrontVec());
 			cameraDirty = false;
 		}
-		projection = glm::perspective(45.f, window.aspect(), 0.1f, 100.f);
-		mainShader.setMat4("projection", projection);
+		if (window.isDirty()) {
+			projection = glm::perspective(45.f, window.aspect(), 0.1f, 100.f);
+			mainShader.setMat4("projection", projection);
+			window.setDirty(false);
+		}
 		chunk.render();
 
 		window.swapBuffers();
@@ -122,7 +125,6 @@ void VoxelEngine::processInput(GLFWwindow* win) {
 		cameraDirty = true;
 	}
 }
-
 
 void VoxelEngine::mouseCallback(double xpos, double ypos) {
 	float x = (float)xpos;
