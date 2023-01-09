@@ -1,6 +1,0 @@
-C:/Users/Manuel/source/repos/VoxelEngine/out/build/x64-debug/CMakeFiles/edit_cache.dir
-C:/Users/Manuel/source/repos/VoxelEngine/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Manuel/source/repos/VoxelEngine/out/build/x64-debug/VoxelEngine/CMakeFiles/VoxelEngine.dir
-C:/Users/Manuel/source/repos/VoxelEngine/out/build/x64-debug/VoxelEngine/CMakeFiles/STB_IMAGE.dir
-C:/Users/Manuel/source/repos/VoxelEngine/out/build/x64-debug/VoxelEngine/CMakeFiles/edit_cache.dir
-C:/Users/Manuel/source/repos/VoxelEngine/out/build/x64-debug/VoxelEngine/CMakeFiles/rebuild_cache.dir
