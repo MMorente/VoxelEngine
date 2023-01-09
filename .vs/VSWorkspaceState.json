@@ -10,11 +10,5 @@
       "out\\build\\x86-release",
       "out\\install\\x86-release"
     ]
-  },
-  "ExpandedNodes": [
-    "",
-    "\\VoxelEngine"
-  ],
-  "SelectedNode": "\\VoxelEngine\\VoxelEngine.cpp",
-  "PreviewInSolutionExplorer": false
+  }
 }
